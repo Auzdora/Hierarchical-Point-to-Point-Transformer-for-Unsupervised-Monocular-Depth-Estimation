@@ -6,8 +6,11 @@
 """
 
 from options import *
+import model
 
 arg = HierP2POptions()
 options = arg.parse()
 
-print(options.epoch)
+if __name__ == "__main__":
+    trainer = model.Trainer(options)
+    trainer.train()
