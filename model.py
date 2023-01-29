@@ -18,6 +18,9 @@ class Trainer:
 
         self._epoch_cnt = 0
 
+        self.optimizer = optim.Adam()
+        self.lr_scheduler = optim.lr_scheduler.StepLR(self.optimizer, self.opt.scheduler_step_size, 0.1)
+
     def train(self):
         """main logic of training process
         """
